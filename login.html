@@ -1,0 +1,106 @@
+{% extends "navbar.html" %}
+{% block content %}
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start my-5 bg-white">
+    <style>
+        /* Additional custom styling */
+        .card {
+            background-color: #f8f9fa; /* Light gray background */
+            border: none; /* Remove default border */
+            border-radius: 10px; /* Add some border radius for a softer look */
+        }
+
+        .card-img-top {
+            border-top-left-radius: 10px; /* Apply border radius to top left corner of the image */
+            border-bottom-left-radius: 10px; /* Apply border radius to bottom left corner of the image */
+            object-fit: cover; /* Ensure the image covers the entire container */
+            height: 100%; /* Make the image fill the entire height of the container */
+        }
+
+        .card-body {
+            padding: 2rem; /* Add some padding to the card body */
+        }
+
+        .form-control {
+            border-radius: 5px; /* Add some border radius to form controls */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Blue primary button */
+            border: none; /* Remove button border */
+            border-radius: 5px; /* Add some border radius to the button */
+            padding: 10px 20px; /* Add some padding to the button */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker shade of blue on hover */
+        }
+
+        /* Media query for larger screens */
+        @media (min-width: 992px) {
+            .card {
+                display: flex; /* Use flexbox layout */
+                align-items: center; /* Center items vertically */
+            }
+
+            .card-img-top {
+    border-bottom-left-radius: 0; /* Remove bottom border radius for larger screens */
+    border-top-right-radius: 30px; /* Apply border radius to top right corner of the image */
+    border-bottom-right-radius: 10px; /* Apply border radius to bottom right corner of the image */
+    width: 100%; /* Make the image fill the entire width of the container */
+    height: auto; /* Allow the image to adjust its height accordingly */
+    margin-top: 30px; /* Add margin to the top of the image */
+}
+
+        }
+        .bg-white {
+        background-color: #ffffff; /* Light blue background */
+    }
+    </style>
+    {% load static %}
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-lg-4">
+                <img src="{% static 'images/login.png' %}" alt="Trendy Pants and Shoes"
+                    class="card-img-top img-fluid" />
+            </div>
+            <div class="col-lg-8">
+                <div class="card-body">
+                    <h2 class="fw-bold mb-4">Sign in</h2>
+                    <form>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="email" id="form2Example1" class="form-control" />
+                            <label class="form-label" for="form2Example1">Email address</label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <input type="password" id="form2Example2" class="form-control" />
+                            <label class="form-label" for="form2Example2">Password</label>
+                        </div>
+
+                        <!-- Checkbox and forgot password link -->
+                        <div class="row mb-4">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                                    <label class="form-check-label" for="form2Example31"> Remember me </label>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <a href="#!" class="text-decoration-none">Forgot password?</a>
+                            </div>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section: Design Block -->
+{% endblock %}

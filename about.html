@@ -1,0 +1,92 @@
+{% extends "navbar.html" %}
+{% block content %}
+<style>
+    body {
+        background-color: #f8f9fa; /* Set background color */
+    }
+
+    .content-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px 20px;
+        text-align: justify;
+        background-color: #fff; /* Set background color for content */
+        border-radius: 10px; /* Add border radius for a softer look */
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    }
+
+    h1 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .image-gallery img {
+        width: calc(33.33% - 20px);
+        max-width: 200px;
+        height: auto;
+        margin: 0 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+        .image-gallery img {
+            width: calc(50% - 20px);
+        }
+    }
+
+    @media (max-width: 576px) {
+        .image-gallery img {
+            width: calc(100% - 20px);
+        }
+    }
+</style>
+
+<div class="content-container">
+    <h1>About Us</h1>
+    <p>As a leading web development company in Finland, Astray applications provides top-notch consulting
+         and strategy services to enhance the digital transformation of enterprises of all sizes, both
+          internally and in terms of customer experience.</p>
+    <div class="image-gallery">
+        {% load static %}
+        <img src="{% static 'images/Studio-Bot-Editorials-Desktop.webp' %}" alt="Image 1">
+        <img src="{% static 'images/download.jpeg' %}" alt="Image 2">
+        <img src="{% static 'images/cr.jpeg' %}" alt="Image 3">
+    </div>
+    <div>
+        <p>Our expertise lies in website and software development, where we have gained extensive 
+            experience by delivering a wide range of projects, including websites, web applications, 
+            mobile applications, 3D modeling services, and digital marketing services, to clients across
+             different industries and of varying sizes.</p>
+    </div>
+    <div>
+        <p>At Astray Technologies, we understand the critical role that user experience plays in the 
+            success of your website or software. That's why we put a strong emphasis on designing and 
+            
+            developing products that are user-friendly, intuitive, and enjoyable to use, ensuring your 
+            customers or employees have a seamless experience.</p>
+    </div>
+</div>
+{% endblock %}

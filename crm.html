@@ -1,0 +1,148 @@
+{% extends "navbar.html" %}
+{% block content %}
+<style>
+    /* Custom styling for the card title */
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Custom styling for the card body */
+    .card-body {
+        padding: 1.5rem;
+        background-color: #f8f9fa; /* Light gray background */
+        border-radius: 10px; /* Add some border radius for a softer look */
+    }
+
+    /* Custom styling for the card links */
+    .card-link {
+        display: block;
+        text-decoration: none;
+        color: #007bff;
+        margin-bottom: 1rem;
+    }
+
+    .card-link:hover {
+        text-decoration: underline;
+    }
+
+    /* Custom styling for the container */
+    .container {
+        padding-top: 3rem; /* Add some padding to the top */
+        padding-bottom: 3rem; /* Add some padding to the bottom */
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sales</h5>
+                    <div class="d-grid">
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a><br>
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sales</h5>
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a><br>
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sales</h5>
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a><br>
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sales</h5>
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a><br>
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sales</h5>
+                    <div class="d-grid">
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a><br>
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sales</h5>
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a><br>
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sales</h5>
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a><br>
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sales</h5>
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a><br>
+                        <a href="{% url 'crmcontent' %}">CRM</a><br>
+                        <a href="#">Button 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+      {% endblock %}

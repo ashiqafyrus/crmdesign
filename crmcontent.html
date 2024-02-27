@@ -1,0 +1,173 @@
+{% extends "navbar.html" %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">Sales teams from good to great</h1>
+            <p style="font-size: 1.5rem;">Odoo CRM is the true customer-centric tool for your sales needs. Track leads, get accurate forecasts, and focus on what matters: closing opportunities.</p>
+            <div style="margin-top: 30px;">
+                <button class="my-button" style="margin-right: 10px;">Start now</button>
+                <button class="mbutton"><a href="{% url 'drag' %}" style="text-decoration: none; color: white;">Schedule a demo</a></button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p id="see-why" class="innovative-text" onclick="toggleMessage()">Free, forever, with unlimited users. See why</p>
+            <p id="message" style="display: none;">This is the message explaining why our service is free, forever, with unlimited users.</p>
+            <div class="img-animation"></div>
+        </div>
+    </div>
+    <div class="container1" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <div>
+                        <h3 style="margin-bottom: 10px;">Heading for Image 1</h3>
+                        <img id="dragImg1" src="{% static 'images/crm1.jpeg' %}" draggable="true" ondragstart="drag(event)" style="width: 150px; height: 150px;" data-text="Text relevant to image 1" />
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 10px;">Heading for Image 2</h3>
+                        <img id="dragImg2" src="{% static 'images/crm2.jpeg' %}" draggable="true" ondragstart="drag(event)" style="width: 150px; height: 150px;" data-text="Different text for image 2" />
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 10px;">Heading for Image 3</h3>
+                        <img id="dragImg3" src="{% static 'images/crm3.jpeg' %}" draggable="true" ondragstart="drag(event)" style="width: 150px; height: 150px;" data-text="Another different text for image 3" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="container" style="margin-bottom: 20px;">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                      </div>
+                    <div class="card" id="card1" ondrop="drop(event)" ondragover="allowDrop(event)" style="text-align: center;">Card 1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .innovative-text {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        background-image: linear-gradient(to right, #ff9a00, #ff8f00, #ff8400, #ff7800, #ff6b00);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbow 5s linear infinite;
+    }
+    
+    .container1 {
+        background-color: #dbe6f1; /* Light gray background */
+        padding: 30px; /* Add padding for spacing */
+        margin-bottom: 50px; /* Ensure space between container and footer */
+    }
+    .card {
+    width: 400px; /* Increased width */
+    height: 500px; /* Increased height */
+    background-color: #f0f0f0; /* Light gray background */
+    border: 1px solid #ccc; /* Light gray border */
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden; /* Hide overflow content */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.card img {
+    display: block;
+    margin-bottom: 10px;
+    width: 80%;
+    height: auto;
+    max-height: 70%; /* Ensure the image doesn't exceed 70% of the card height */
+    object-fit: cover; /* Maintain aspect ratio and cover the space */
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+  
+    /* Hover effect for the clickable text */
+    #see-why:hover {
+        color: #5d00ff;
+    }
+
+    /* Rainbow animation keyframes */
+    @keyframes rainbow {
+        0% { background-position: 0 0; }
+        100% { background-position: 100% 0; }
+    }
+
+    /* Styling for the buttons */
+    .my-button, .mbutton {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 0;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-color 0.3s ease; /* Smooth transition for background color */
+    }
+    body {
+        background-color: #f8f9fa;
+    }
+    .container1 {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+    .my-button:hover, .mbutton:hover {
+        background-color: #45a049; /* Darker shade on hover */
+    }
+</style>
+<script>
+    // Initialize progress bar width to 0
+    var progressBar = document.querySelector('.progress-bar');
+    progressBar.style.width = '0%';
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+        // Clone the entire card element and set it as drag data
+        var cardClone = ev.target.cloneNode(true);
+        ev.dataTransfer.setDragImage(cardClone, 0, 0); // Set the drag image to the cloned card
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        var draggedImage = document.getElementById(data);
+        var cardId = ev.target.id;
+        var card = document.getElementById(cardId);
+
+        // Clone the dragged image and append it to the drop target
+        var draggedImageClone = draggedImage.cloneNode(true);
+        card.appendChild(draggedImageClone);
+
+        // Update the progress bar value
+        var imagesInCard = card.querySelectorAll('img').length; // Get the number of images in the card
+        var totalImages = 3; // Assuming there are 3 images in total
+        var progressValue = (imagesInCard / totalImages) * 100;
+        progressBar.style.width = progressValue + '%';
+        progressBar.textContent = progressValue + '%'; // Update the text content of the progress bar
+    }
+</script>
+{% endblock %}

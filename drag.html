@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draggable Cards</title>
+<style>
+  .card {
+    width: 200px;
+    height: 1000px; /* Increased height to accommodate image */
+    background-color: lightblue;
+    border: 1px solid blue;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    overflow: auto; /* Enable scrolling for multiple images */
+  }
+  
+  .card img {
+    display: block;
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div id="container">
+  <div class="card" id="card1" ondrop="drop(event)" ondragover="allowDrop(event)">Card 1</div>
+
+</div>
+
+<img id="dragImg" src="https://via.placeholder.com/150" draggable="true" ondragstart="drag(event)" style="width: 150px; height: 150px;" />
+
+<img id="dragImg" src="https://via.placeholder.com/150" draggable="true" ondragstart="drag(event)" style="width: 150px; height: 150px;" />
+
+<img id="dragImg" src="https://via.placeholder.com/150" draggable="true" ondragstart="drag(event)" style="width: 150px; height: 150px;" />
+
+<script>
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    var draggedImage = document.getElementById(data);
+    var cardId = ev.target.id;
+    var card = document.getElementById(cardId);
+    
+    // Append image to the card
+    card.appendChild(draggedImage.cloneNode(true)); // Clone the image to move it
+  }
+</script>
+
+</body>
+</html>
